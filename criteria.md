@@ -51,13 +51,13 @@ whether you hit them:
 
 ---
 
+<!-- Milestone 3 additions: the five project-specific acceptance criteria. -->
+
 ## 1.
 
-<!-- Your criterion. It must name a number. -->
+The model must achieve at least **0.65 overall accuracy** on the held-out test set.
 
-
-
-**Why this target:**
+**Why this target:** With three labels, guessing without learning would be near one-third accuracy. I chose 0.65 as a useful improvement while keeping the target realistic for a small manually labeled dataset.
 
 
 
@@ -65,11 +65,9 @@ whether you hit them:
 
 ## 2.
 
-<!-- Your criterion. -->
+The model must achieve at least **0.60 macro F1** on the held-out test set.
 
-
-
-**Why this target:**
+**Why this target:** Macro F1 gives `training_advice`, `race_report`, and `gear_discussion` equal weight, so the majority label cannot hide weak performance on a smaller label.
 
 
 
@@ -77,11 +75,9 @@ whether you hit them:
 
 ## 3.
 
-<!-- Your criterion. -->
+Each of the three labels must achieve an **F1 score of at least 0.50** on the held-out test set.
 
-
-
-**Why this target:**
+**Why this target:** Every category in the taxonomy needs to be usable. I chose a slightly looser per-label threshold because the smallest label will have fewer held-out examples and therefore a noisier score.
 
 
 
@@ -89,11 +85,9 @@ whether you hit them:
 
 ## 4.
 
-<!-- Your criterion. -->
+No single label may represent more than **70% of the labeled dataset**.
 
-
-
-**Why this target:**
+**Why this target:** The project requires this cap to reduce majority-label guessing. It is especially important here because the three labels describe different post purposes and each needs enough examples for training.
 
 
 
@@ -101,11 +95,9 @@ whether you hit them:
 
 ## 5.
 
-<!-- Your criterion. -->
+The most-confident third of the model's held-out predictions must be at least **0.10 more accurate** than the least-confident third.
 
-
-
-**Why this target:**
+**Why this target:** The model's confidence should provide useful ranking information: predictions it considers clearer should be more reliable than uncertain predictions. The 0.10 gap is large enough to be meaningful but does not require perfect confidence calibration.
 
 
 

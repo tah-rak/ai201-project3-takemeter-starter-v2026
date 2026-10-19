@@ -3,7 +3,7 @@
 # Copy these from your README so the baseline is judged on exactly the
 # definitions you wrote. baseline.py reads this file.
 #
-# These definitions match the Milestone 2 taxonomy in README.md.
+
 
 training_advice: asks for or gives actionable guidance about running workouts, mileage, pacing, race preparation, recovery, or injury management
 race_report: describes a specific completed race or running event, focusing on what happened, the result, or the runner's experience
