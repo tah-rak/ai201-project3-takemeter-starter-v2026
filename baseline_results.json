@@ -1,0 +1,184 @@
+{
+  "model": "facebook/bart-large-mnli",
+  "n": 30,
+  "seed": 42,
+  "held_out": false,
+  "used_definitions": true,
+  "scores": {
+    "n": 30,
+    "accuracy": 0.23333333333333334,
+    "f1_macro": 0.22692982456140354,
+    "per_label": {
+      "gear_discussion": {
+        "precision": 1.0,
+        "recall": 0.06666666666666667,
+        "f1": 0.125,
+        "support": 15
+      },
+      "race_report": {
+        "precision": 0.1875,
+        "recall": 0.3333333333333333,
+        "f1": 0.24000000000000005,
+        "support": 9
+      },
+      "training_advice": {
+        "precision": 0.23076923076923078,
+        "recall": 0.5,
+        "f1": 0.3157894736842105,
+        "support": 6
+      }
+    }
+  },
+  "predictions": [
+    {
+      "text": "Doing a 10mi long run during a week that\u2019s only 21mi total will almost always feel like a lot. Especially if you\u2019re newer to that distance. That\u2019s almost 50% of your weekly mileage. If you\u2019re new and close to half marathon distance for your long run, a long run of more than 40% is provably going to feel rough. Even if it isn\u2019t hot. I\u2019d consider a different training schedule for that reason. But it\u2019s different if you aren\u2019t comfortable getting to 30-36mpw and doing 20-24mi between the other days that aren\u2019t your long run.",
+      "gold": "training_advice",
+      "predicted": "training_advice"
+    },
+    {
+      "text": "I've never seen a plan where the longest run is five weeks before the half. That seems crazy to me, but I'm also not a running coach so maybe there's a logic to the plan that is unknown to me.",
+      "gold": "training_advice",
+      "predicted": "race_report"
+    },
+    {
+      "text": "You absolutely can. Make sure you\u2019re hydrating well the days before so you go into your run hydrated, and strategically plan water to be avail about along you\u2019re route. Have someone meet you, stash a water bottle, plan to pop into a deli mid run, plan to run by a fountain. I would do 20+ milers in New England summer heat. I\u2019d stash a water bottle at the halfway turn around point, get it, drink it, and finish the run I am a thirsty and sweaty person, I lose more/drink more than most. It was never a problem for me. Vests just got you conditioned\u2026. Not saying it\u2019s bad, you do what works for you, but just saying you COULD do it without it.",
+      "gold": "gear_discussion",
+      "predicted": "race_report"
+    },
+    {
+      "text": "Thank you! I actually just downloaded the app ( Strava ). I think I will check it out the next time I run and maybe continue using that since it has additional perks!",
+      "gold": "race_report",
+      "predicted": "training_advice"
+    },
+    {
+      "text": "Your English is great don\u2019t worry! Also thanks :))",
+      "gold": "race_report",
+      "predicted": "training_advice"
+    },
+    {
+      "text": "Hey I really appreciate that! I just downloaded a new app because I was really worried that this one is somehow off. I also have a feeling I run \u201cfast\u201d on average when I pass many other runners but you never know. I don\u2019t want to accidentally mislead people or spread false information.",
+      "gold": "race_report",
+      "predicted": "training_advice"
+    },
+    {
+      "text": "I wear a running vest for longer distances because it's easier to meet my carb intake goals. I can carry more gels and use a carb drink mix. If you primarily run 5-10k, there's not a lot of need for a vest. Reflectors and lights are for safety, especially in the winter when it's dark out more. For music, Shokz bone conduction headphones are kind of the cream of the crop for running. They're open ear for safety and the design means they won't fall out of your ears. If you have a running watch like a Garmin or apple watch, you can sync the headphones directly to the watch and play music that way without having to carry a phone at all.",
+      "gold": "gear_discussion",
+      "predicted": "training_advice"
+    },
+    {
+      "text": "Not to mention they don\u2019t slide off your face when you\u2019re sweaty! 5 more replies",
+      "gold": "gear_discussion",
+      "predicted": "training_advice"
+    },
+    {
+      "text": "Also, to add - as an observer, you don't exactly know what someone's run that day might require. There is a popular seawall walk near where I live, it's only 5k there and back...seeing someone running on that with a bunch of gear might seem ridiculous, but I usually run that seawall as my finisher after a 20k+ trail run!",
+      "gold": "gear_discussion",
+      "predicted": "race_report"
+    },
+    {
+      "text": "It\u2019s like roof boxes on your Audi. Some have it because of function, most just think it\u2019s a cool aesthetic. You don\u2019t need any of it but if you feel you want it then go for it.",
+      "gold": "gear_discussion",
+      "predicted": "race_report"
+    },
+    {
+      "text": "Thanks this is inspiring. I have run on and off these weeks this year. I'm right now at 5KM and always 26 minutes. I'm moving up to 6KM next time and going with that for maybe 4 runs and then add on another KM.",
+      "gold": "race_report",
+      "predicted": "training_advice"
+    },
+    {
+      "text": "Gotta put on $1200 of gear and take 15 pictures for my morning 2 miles lol",
+      "gold": "gear_discussion",
+      "predicted": "race_report"
+    },
+    {
+      "text": "\"Experience\" races are popular right now. Relays, night runs, etc. Gear manufacturers happily capitalize on that. Nothing has changed for 5Ks/10Ks, other than super shoes.",
+      "gold": "gear_discussion",
+      "predicted": "race_report"
+    },
+    {
+      "text": "I see lots of people saying 'You don't need a vest for 5k' but it is just the easiest way to carry stuff, especially atm during winter. If I wear my vest, it has separate pockets for my keys and phone at minimum. Could wear a belt but it's easier to get my phone out of a vest if I need it and then my keys don't spring out with it! Also ATM carrying gloves and a snood, and for a group evening run tonight I also popped some tissues and a protein bar in (in case I was hungry on the way home). Could not fit that all in the belt I have and today's shorts didn't have pockets. Obviously for longer runs also having water on hand is a plus!",
+      "gold": "gear_discussion",
+      "predicted": "gear_discussion"
+    },
+    {
+      "text": "I do believe that is the only alternative.",
+      "gold": "race_report",
+      "predicted": "training_advice"
+    },
+    {
+      "text": "I mean.....people will always have something to say regardless of what you do, so you might as well do what works best for you Hahaha at that point, you might as well embrace it and wear it with confidence, right? If you dont mind me asking, what vest are you using for your 3-5mi runs? Thats exacrly the range im looking to run right now",
+      "gold": "gear_discussion",
+      "predicted": "training_advice"
+    },
+    {
+      "text": "I assumed that having 4 three mile runs a week were essential to not over train, but it makes sense as to why 8 and 10 miles felt like such a jump when I\u2019m only running 3 miles at a time. Even though I craved more at the end of my 3 miles I didn\u2019t keep going because I didn\u2019t want to overtrain.",
+      "gold": "training_advice",
+      "predicted": "training_advice"
+    },
+    {
+      "text": "That's a great time for your first 10k race! Congratulations! I look forward to seeing how you do in the half marathon. You got this.",
+      "gold": "training_advice",
+      "predicted": "race_report"
+    },
+    {
+      "text": "Ow. You hit me right in the arthritis. Wish I was kidding. PSA: don't get old!",
+      "gold": "race_report",
+      "predicted": "race_report"
+    },
+    {
+      "text": "Genuine question but does it matter more the distance you're running for gear or the time it takes you to run? I'm a pretty slow runner but a 5k i dont have any problems without gear. I'm planning a 10k and a 1/2 marathon later this year and some people have suggested to start having gear since my 10k time is currently around 1.5 hours and I'd guess my half time would be around 3 hours by the time I train that far.",
+      "gold": "gear_discussion",
+      "predicted": "race_report"
+    },
+    {
+      "text": "Welcome back to running! I love Goodr running sunglasses, they\u2019re fun, cheap, comfortable and don\u2019t bounce. I think the OG styles last longer than some of the more fashion styles. I have some going on 5+ years and many runs.",
+      "gold": "gear_discussion",
+      "predicted": "training_advice"
+    },
+    {
+      "text": "Wait, so do you run at night time? I've never tried that but I'm interested in if its any different than morning or day running.",
+      "gold": "race_report",
+      "predicted": "training_advice"
+    },
+    {
+      "text": "I don't go all out actually, I try to keep a normal pace and I've only went all out in 1 or 2 5k",
+      "gold": "training_advice",
+      "predicted": "race_report"
+    },
+    {
+      "text": "Yeah was just about to say there is no way you were not active at all. 50 m 10k for a woman is a very decent time especially after 3 months of running. I was active for the last 6 years but it still took me 6 months since I started running to break 50m 10k (I was mostly lifting prior and some cycling). You probably just underestimate the amount of activity you do.",
+      "gold": "race_report",
+      "predicted": "race_report"
+    },
+    {
+      "text": "I don't use a vest but people look at me like I'm crazy when I run with my amphibipod fanny pack in the summer. I refuse to carry shit in my hands while I run. And the people looking at me are usually the ones holding their phone while they run. \ud83d\ude02 I was hesitant at first with the fanny pack but oh my god its so amazing. Love it so much and can genuinely never go back. 2 more replies",
+      "gold": "gear_discussion",
+      "predicted": "race_report"
+    },
+    {
+      "text": "Reddit Rules Privacy Policy User Agreement Your Privacy Choices Accessibility Reddit, Inc. \u00a9 2026. All rights reserved. That makes total sense. I would be very comfortable upping my MPW, I felt obligated to stick to small runs to not over train.",
+      "gold": "training_advice",
+      "predicted": "training_advice"
+    },
+    {
+      "text": "Oh for sure! Ive been running with my dog, and it has been awesome! It made me remember how much I missed it. Im hoping to start signing up for races in the 2nd half of the year",
+      "gold": "gear_discussion",
+      "predicted": "race_report"
+    },
+    {
+      "text": "Wow this is very impressive! I just slowly started running. I really hope i can reach to your level one day",
+      "gold": "race_report",
+      "predicted": "race_report"
+    },
+    {
+      "text": "This is how ive been feeling sometimes, to the point where it has made me wonder if im missing something lol",
+      "gold": "gear_discussion",
+      "predicted": "race_report"
+    },
+    {
+      "text": "A lot of Very Serious Runners don\u2019t seem to understand something about vests: they\u2019re fashionable to a lot of people. Yes, most people don\u2019t NEED a vest at the local 5K, but they do offer some storage and people simply like how they look. Did I NEED an arm sleeve like Allen Iverson when I was in 6th grade, getting 5 minutes per game off the bench? Nope. But it made me feel cool. Same thing goes for vests. People like how they look wearing a vest and I say more power to them.",
+      "gold": "gear_discussion",
+      "predicted": "race_report"
+    }
+  ]
+}

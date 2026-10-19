@@ -187,15 +187,21 @@ I tested the definitions and decision rule with eight generated borderline posts
 
 <!-- Your starting model, your settings, and anything you changed and why. -->
 
-**Base model:**
+<!-- Milestone 5 additions: details recorded from the completed notebook run. -->
 
-**Settings:** <!-- epochs, learning rate, batch size, seed -->
+**Base model:** `distilbert-base-uncased`
 
-**Anything I changed from the defaults, and why:**
+**Settings:** 3 epochs, learning rate `2e-5`, batch size `16`, maximum length `128`, seed `42`
 
-**Split sizes:** <!-- train / val / test, and per-label counts in the test
-split. If a label had fewer than about 8 in test, say so — it explains a lot
-of next unit's variance. -->
+**Device:** CPU (`torch 2.11.0+cpu`)
+
+**Anything I changed from the defaults, and why:** Nothing; I used the notebook defaults.
+
+**Split sizes:** 141 train / 31 validation / 31 test.
+
+The test split contained 5 `training_advice`, 11 `race_report`, and 15
+`gear_discussion` examples. The `training_advice` test support is below 8, so
+its per-label metric may vary substantially between random seeds.
 
 
 
