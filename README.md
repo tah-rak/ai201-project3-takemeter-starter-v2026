@@ -68,6 +68,11 @@ These distinctions overlap in real posts, so the next milestone will test which 
 <!-- Your community, and what your classifier sorts posts into. Three or four
      sentences. -->
 
+TakeMeter classifies public Reddit `r/running` posts into three categories:
+`training_advice`, `race_report`, and `gear_discussion`. I labeled 203 examples
+and fine-tuned a local `distilbert-base-uncased` classifier on them. The
+classifier predicts the main purpose of a new running-community post; it does
+not judge whether the advice or opinion is correct.
 
 
 ---
@@ -218,17 +223,27 @@ its per-label metric may vary substantially between random seeds.
 
 **Moment 1**
 
-- *What I asked for:*
-- *What came back:*
-- *What I changed:*
+- *What I asked for:* Help identifying useful distinctions in `r/running` and
+  finding the hardest boundary between possible labels.
+- *What came back:* Suggestions for separating training questions and advice,
+  race experiences, and gear discussions, including borderline cases.
+- *What I changed:* I chose the final three labels, wrote their definitions and
+  decision rule, and added my own hard-case examples.
 
 **Moment 2**
 
-- *What I asked for:*
-- *What came back:*
-- *What I changed:*
+- *What I asked for:* Help checking the labeled data for duplicates, invalid
+  labels, empty text, and class imbalance.
+- *What came back:* Validation confirmed 203 rows, three valid labels, no
+  duplicate posts, and no label above the 70% limit.
+- *What I changed:* I reviewed the examples and documented the label counts,
+  difficult cases, and labeling method in this README.
 
-**Pre-labelling disclosure:**
+**Pre-labelling disclosure:** AI assistance was used to help organize and
+initially label many of the collected examples after the taxonomy was written.
+I read and reviewed the examples and corrected labels when needed. The first
+20 examples were independently reviewed as `cold` examples rather than being
+accepted without review.
 
 <!-- ═══════════════════════ UNIT 6 — THE TEST ═══════════════════════
 
