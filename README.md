@@ -23,6 +23,32 @@
 
 ---
 
+## Milestone 1: Community observation
+
+### Community
+
+- **Community:** Reddit r/running
+- **Public URL:** https://www.reddit.com/r/running/
+- **Posts reviewed:** 35 public posts
+- **Review method:** I read a sample of posts across the community rather than designing categories from memory. The sample included training questions, race reports, injury and recovery discussions, shoe and gear discussions, and general running advice.
+
+### Why this community
+
+r/running is public, active, and broad enough to provide more than 200 text posts. The posts vary in purpose and detail: some ask for practical advice, some describe a runner's own experience, some report a result, and some make a recommendation or argument. That variation should provide usable distinctions without depending on one particular race, show, or product release.
+
+### Candidate distinctions from the reading
+
+These are observations, not final labels:
+
+1. **Question versus answer or claim:** Some posts primarily ask the community for help with a training, injury, race, or gear problem, while others provide advice, report an experience, or state a conclusion.
+2. **Specific experience versus general recommendation:** Some posts describe a particular run, race, training block, injury, or shoe test with concrete details; others make advice or recommendations without describing a specific personal event.
+3. **Evidence-backed explanation versus unsupported opinion:** Some posts include measurable or checkable details such as distance, pace, time, mileage, training history, or symptoms; others mainly express a preference or conclusion without those details.
+4. **Training or recovery guidance versus gear discussion:** Some posts focus on workouts, progress, injury management, or recovery decisions; others focus on shoes, watches, clothing, or other equipment.
+
+These distinctions overlap in real posts, so the next milestone will test which pair can be turned into mutually exclusive labels with a decision rule. I will not treat “good” or “bad” as labels because those judgments are not consistently observable in the text.
+
+---
+
 <!-- ─────────────────────────────────────────────────────────────────────────
      HOW TO USE THIS FILE
 
