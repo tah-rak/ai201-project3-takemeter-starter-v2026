@@ -140,19 +140,20 @@ I tested the definitions and decision rule with eight generated borderline posts
 <!-- Where you collected from, how you labelled, your counts, and three hard
      cases. -->
 
-**Where the posts came from:**
+**Where the posts came from:** Public r/running pages saved as the three PDFs `Half Marathon Training Advice`, `Race report: I ran my first 10k ever - 50:22`, and `What's up with all this gear?`. I treated the visible comments as individual text examples, as requested, and removed Reddit navigation, vote counts, deleted comments, and duplicate text. The final CSV contains 203 unique examples.
 
-**How I labelled them:** <!-- Cold first? Pre-labelled with AI and corrected?
-Say so plainly — the disclosure is required, not penalised. -->
+**How I labelled them:** I used the Milestone 2 definitions and AI-assisted first-pass labels, then checked each extracted example against the taxonomy. Examples from the training thread were labeled `training_advice`, examples from the gear thread were labeled `gear_discussion`, and race-thread comments were labeled `race_report` unless their main purpose was training guidance.
+
+**Labeling disclosure:** These examples were extracted from Reddit comments rather than only top-level posts. The first 20 rows are marked in `labels.csv` as requiring the personal cold-label pass; they are not being falsely represented as independently labeled. Before training, I must review those 20 rows without AI and change their notes to `cold` if my own labels agree.
 
 **Counts per label:**
 
 | Label | Count | Share |
 |---|---|---|
-|  |  |  |
-|  |  |  |
-|  |  |  |
-| **Total** |  | 100% |
+| `training_advice` | 35 | 17.24% |
+| `race_report` | 68 | 33.50% |
+| `gear_discussion` | 100 | 49.26% |
+| **Total** | **203** | **100%** |
 
 **Three hard cases**
 
@@ -160,25 +161,25 @@ Say so plainly — the disclosure is required, not penalised. -->
      been, and what you chose. These are worth more than the easy 190. -->
 
 **1.**
-> *The post:*
+> *The post:* “If I'm understanding you correctly this plan has you doing a month-long taper. If so, that is 2x longer than I've ever seen in a half marathon plan.”
 >
-> *Could have been:*
+> *Could have been:* `training_advice` or `race_report`
 >
-> *I chose, because:*
+> *I chose, because:* `training_advice`; it gives guidance about the training plan rather than recounting a completed race.
 
 **2.**
-> *The post:*
+> *The post:* “Thats a really impressive time for a first 10k, congrats! Goodluck with training for the half; you may want to look up a training schedule online that fits your needs.”
 >
-> *Could have been:*
+> *Could have been:* `race_report` or `training_advice`
 >
-> *I chose, because:*
+> *I chose, because:* `training_advice`; the actionable part is the recommendation to find a training schedule, while the race result is context.
 
 **3.**
-> *The post:*
+> *The post:* “I'm not sure I could survive a 20 mile easy run without my water vest...”
 >
-> *Could have been:*
+> *Could have been:* `gear_discussion` or `training_advice`
 >
-> *I chose, because:*
+> *I chose, because:* `gear_discussion`; the comment's point is the usefulness of a specific piece of running equipment.
 
 ---
 
