@@ -80,33 +80,56 @@ These distinctions overlap in real posts, so the next milestone will test which 
      The decision rule is worth a point on its own and it's the thing most
      people leave out. Every taxonomy has a hardest boundary. Name yours. -->
 
-### `label_one`
+### `training_advice`
 
-**Definition:**
-
-**Example 1:**
->
-
-**Example 2:**
->
-
-### `label_two`
-
-**Definition:**
+**Definition:** A post whose main purpose is to ask for or give actionable guidance about running workouts, mileage, pacing, race preparation, recovery, or injury management.
 
 **Example 1:**
->
+> An r/running post asking how to adjust weekly mileage and long-run distance while preparing for a first marathon.
 
 **Example 2:**
->
+> An r/running post describing a recent increase in training volume and asking whether a slower recovery week would be appropriate.
+
+### `race_report`
+
+**Definition:** A post describing a specific completed race or running event, with the main focus on what happened, the result, or the runner's experience.
+
+**Example 1:**
+> An r/running race recap describing a recent half-marathon, including the runner's pacing, finish time, and what went wrong late in the race.
+
+**Example 2:**
+> An r/running post recounting a first marathon from start to finish and reflecting on the course, fueling, and final result.
+
+### `gear_discussion`
+
+**Definition:** A post whose main purpose is to compare, choose, review, or troubleshoot running equipment such as shoes, watches, clothing, or accessories.
+
+**Example 1:**
+> An r/running post comparing two daily trainers and asking which one is more suitable for easy high-mileage runs.
+
+**Example 2:**
+> An r/running post reviewing a GPS watch after several runs and discussing inaccurate distance tracking and battery life.
 
 ### The hardest boundary
 
-**Which two labels:**
+**Which two labels:** `training_advice` and `gear_discussion`
 
-**The decision rule I used every time:**
-<!-- e.g. "If the post names a specific checkable fact, it's `analysis`, even
-     if the tone is heated." -->
+**The decision rule I used every time:** If the post's main request or conclusion is about choosing, comparing, evaluating, or fixing a piece of equipment, label it `gear_discussion`, even when the post mentions a training goal. Use `training_advice` when the main request is about the workout, mileage, pacing, recovery, or injury plan and equipment is only incidental.
+
+### Boundary stress test
+
+I tested the definitions and decision rule with eight generated borderline posts.
+
+| Test post | Label | Reason |
+|---|---|---|
+| “I am training for a marathon; should my long run increase from 14 to 16 miles this weekend?” | `training_advice` | The decision concerns mileage and the training plan. |
+| “Which shoe should I use for my marathon build, the Nimbus or the Clifton?” | `gear_discussion` | The main request is choosing equipment. |
+| “My calves hurt after switching shoes. Should I stop the training block?” | `gear_discussion` | The post asks what to do about a shoe-related problem; the training block is context. |
+| “I missed two weeks with a calf strain. How should I safely resume running?” | `training_advice` | The main request is recovery and return-to-training guidance. |
+| “I ran my first half-marathon yesterday and finished in 2:08 after fading at mile 10.” | `race_report` | It reports a completed event and its result. |
+| “Has anyone used this watch for marathon pacing, and is its GPS accurate?” | `gear_discussion` | The post evaluates a watch, even though pacing is mentioned. |
+| “My race was Sunday; here is the full recap, including the shoes I wore.” | `race_report` | The main purpose is recounting the completed race; shoes are supporting detail. |
+| “Should I replace my worn shoes before starting a three-week taper?” | `gear_discussion` | The decision is about replacing equipment; the taper is context. |
 
 
 
