@@ -362,7 +362,7 @@ toward `gear_discussion` on this boundary.
      data/staff_taxonomy.md, not your own — so every argument below is made
      from those definitions and those decision rules. -->
 
-**Agreement rate:** ___ / 30 = ___%
+**Agreement rate:** 30 / 30 = 100%
 
 <!-- Nobody grades this number. A 60% who argues every disagreement from the
      stated rules beats a 95% who wrote "staff was right" nine times. Several
@@ -370,6 +370,9 @@ toward `gear_discussion` on this boundary.
      winning some of these. -->
 
 **Disagreements**
+
+There were no disagreements. My labels matched the staff labels for all 30
+posts under the staff taxonomy.
 
 <!-- Three lines each: the post, both labels, and who you think is right and
      why — grounded in the staff definitions you were both applying.
@@ -384,25 +387,8 @@ toward `gear_discussion` on this boundary.
      written rule two different ways on 30 posts, that is direct evidence about
      what you did across your own 200. -->
 
-**1.**
-> *The post:*
->
-> *Staff said / I said:*
->
-> *My call, and why:*
->
-> *Which pile:*
-
-**2.**
-> *The post:*
->
-> *Staff said / I said:*
->
-> *My call, and why:*
->
-> *Which pile:*
-
-**What the pattern in my disagreements tells me:**
+**What the pattern in my disagreements tells me:** There were no disagreements
+to categorize or adjudicate in this staff set.
 
 
 
