@@ -5,6 +5,6 @@
 #
 
 
-training_advice: asks for or gives actionable guidance about running workouts, mileage, pacing, race preparation, recovery, or injury management
-race_report: describes a specific completed race or running event, focusing on what happened, the result, or the runner's experience
-gear_discussion: compares, chooses, reviews, or troubleshoots running equipment such as shoes, watches, clothing, or accessories
+training_advice: A post whose main purpose is to ask for or give actionable guidance about running workouts, mileage, pacing, race preparation, recovery, or injury management.
+race_report: A post that mainly recounts a specific completed race or running event, including the runner's result, experience, or reflections.
+gear_discussion: A post whose main purpose is discussing, reviewing, comparing, recommending, or questioning running shoes, clothing, accessories, or equipment.

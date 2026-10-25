@@ -258,20 +258,32 @@ accepted without review.
      prints this table for you. -->
 
 | Measure | Baseline | Trained | Difference |
-|---|---|---|---|
-| Overall accuracy |  |  |  |
-| Macro F1 |  |  |  |
-| F1 — `label_one` |  |  |  |
-| F1 — `label_two` |  |  |  |
+|---|---:|---:|---:|
+| Overall accuracy | 0.419 | 0.484 | +0.065 |
+| Macro F1 | 0.262 | 0.217 | -0.044 |
+| F1 — `gear_discussion` | 0.235 | 0.652 | +0.417 |
+| F1 — `race_report` | 0.550 | 0.000 | -0.550 |
+| F1 — `training_advice` | 0.000 | 0.000 | +0.000 |
 
 **What I predicted before I looked:**
 <!-- Milestone 1 asks you to write this BEFORE seeing the trained numbers. A
      prediction made afterwards isn't one. -->
 
+I predict the fine-tuned model will outperform the baseline because it learned
+from examples specific to this community and taxonomy.
+
 **What the gap actually means:**
 <!-- If the baseline matched your trained model, your fine-tuning added
      nothing — and that is a real finding, not a failure. Say it plainly. -->
 
+Fine-tuning improved overall accuracy by 0.065, but it did not improve the
+balanced result: macro F1 decreased by 0.044. The trained model performed much
+better on `gear_discussion`, but it failed to identify `race_report` and
+`training_advice` in this test split. The baseline performed better on
+`race_report`, so the training run did not generalize evenly across all three
+labels. The trained model predicted every test example as `gear_discussion`,
+which suggests that the source-clustered dataset and the small test support for
+`training_advice` limited what fine-tuning could learn.
 
 
 ---
