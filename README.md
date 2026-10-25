@@ -333,11 +333,11 @@ toward `gear_discussion` on this boundary.
 
 | # | Criterion | Target | Verdict | How I decided |
 |---|---|---|---|---|
-| 1 |  |  |  |  |
-| 2 |  |  |  |  |
-| 3 |  |  |  |  |
-| 4 |  |  |  |  |
-| 5 |  |  |  |  |
+| 1 | Overall accuracy | ≥ 0.65 across all seeds | MISSED | Accuracy was 0.484 for seeds 42, 7, and 2024. |
+| 2 | Macro F1 | ≥ 0.60 across all seeds | MISSED | Macro F1 was 0.217 for all three seeds. |
+| 3 | Every label F1 | ≥ 0.50 for every label and seed | MISSED | `training_advice` and `race_report` each had F1 0.000 in all three runs. |
+| 4 | Dataset label balance | No label above 70% | MET | `gear_discussion` was the largest label at 49.26%. |
+| 5 | Confidence gap | Most-confident third at least 0.10 above least-confident third | MET | The gap was at least 0.50 in every seed. |
 
 **Diagnoses**
 
@@ -349,6 +349,40 @@ toward `gear_discussion` on this boundary.
      ⚠️ Use your agreement report as evidence. It is the only instrument you
      have that can tell a LABELLING problem from a MODEL problem, and this
      section is graded on whether you used it that way. -->
+
+**Criterion 1 — Overall accuracy:** MISSED. Accuracy stayed at 0.484 across
+all three seeds, below the 0.65 target. The confusion matrix shows that all 5
+`training_advice` posts and all 11 `race_report` posts were predicted as
+`gear_discussion`, so the error was systematic rather than a lucky split.
+
+**Criterion 2 — Macro F1:** MISSED. Macro F1 was 0.217 in every seed, below the
+0.60 target. Because macro F1 weights each label equally, the two labels with
+F1 0.000 prevented the strong `gear_discussion` F1 of 0.652 from hiding the
+failure.
+
+**Criterion 3 — Every label F1:** MISSED. `training_advice` and `race_report`
+both had F1 0.000 in all three runs. The three-seed stability rules out random
+seed variation as the main explanation. The dataset was source-clustered by
+thread, so the model likely learned a source-specific `gear_discussion`
+pattern instead of the intended post-purpose boundary. The 30/30 staff
+agreement provides evidence that I could apply a written taxonomy consistently,
+but it does not prove that the training examples were diverse enough for the
+model to generalize.
+
+**Criterion 4 — Dataset label balance:** MET. The largest label represented
+49.26% of the dataset, below the 70% limit.
+
+**Criterion 5 — Confidence gap:** MET. The most-confident third was more
+accurate than the least-confident third by 0.80, 0.80, and 0.50 for seeds 42,
+7, and 2024 respectively, all above the 0.10 target.
+
+**Overall diagnosis:** The main issue was not seed instability or a failure to
+follow the written labeling rules. The likely causes were source-clustered
+examples and a task the model could not reliably learn from this small dataset.
+The confusion matrix shows a genuinely one-sided prediction pattern toward
+`gear_discussion`; the perfect staff agreement means there was no observed
+staff-labeling disagreement to use as evidence of inconsistent rule
+application.
 
 
 
