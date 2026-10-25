@@ -232,12 +232,14 @@ its per-label metric may vary substantially between random seeds.
 
 **Moment 2**
 
-- *What I asked for:* Help checking the labeled data for duplicates, invalid
-  labels, empty text, and class imbalance.
-- *What came back:* Validation confirmed 203 rows, three valid labels, no
-  duplicate posts, and no label above the 70% limit.
-- *What I changed:* I reviewed the examples and documented the label counts,
-  difficult cases, and labeling method in this README.
+- *What I asked for:* Help comparing the three-seed confusion matrices and
+  identifying why the trained model missed labels.
+- *What came back:* The error pattern showed that the model repeatedly favored
+  `gear_discussion`, especially for `race_report`, while `training_advice`
+  improved after adding examples.
+- *What I changed:* I added 30 clearly marked synthetic `training_advice`
+  examples as one controlled improvement, reran the three seeds, and reported
+  the remaining `race_report` errors instead of hiding them.
 
 **Pre-labelling disclosure:** AI assistance was used to help organize and
 initially label many of the collected examples after the taxonomy was written.
@@ -478,13 +480,28 @@ only count as met when all three seeds pass.
 
 <!-- For each criterion still missed: what you'd do, and why you stopped. -->
 
-Overall accuracy, macro F1, every-label F1, and the confidence-gap criterion
-still have at least one missed seed. The remaining problem is the
-`race_report`/`gear_discussion` boundary: the after matrix still sends 6 real
-`race_report` posts to `gear_discussion` and none in the reverse direction.
-The next improvement would need more diverse `race_report` examples or a
-careful review of that boundary, but I stopped after testing one change as
-required.
+**Overall accuracy:** This remains missed because seed 7 reached only 0.629,
+below 0.65. I would add more diverse examples across all three source types
+and rerun the same three seeds, but I stopped after the one permitted
+improvement.
+
+**Macro F1:** This remains missed because seeds 42 and 7 reached only 0.506 and
+0.593, below 0.60. I would target the remaining `race_report` errors and
+recheck the boundary examples, but I stopped to keep the experiment to one
+change.
+
+**Every-label F1:** This remains missed because `race_report` stayed below 0.50
+in all three after runs: 0.000, 0.429, and 0.333. The after matrix still sends
+6 real `race_report` posts to `gear_discussion` and none in the reverse
+direction. I would add diverse race-report examples or revise that boundary,
+but I stopped after testing the training-advice addition.
+
+**Confidence gap:** This remains missed for seed 2024, whose gap was 0.091,
+below 0.10. I would examine confidence calibration or more borderline examples,
+but I stopped because changing the training setup would be a second
+intervention.
+
+The label-balance criterion remained met at 42.92% for the largest label.
 
 
 **The gap between what I meant my labels to capture and what the model
