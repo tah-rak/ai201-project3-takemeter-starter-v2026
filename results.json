@@ -49,6 +49,6 @@
   },
   "device": "cpu",
   "device_name": "CPU",
-  "torch_version": "2.11.0+cpu",
+  "torch_version": "2.14.1+cpu",
   "max_length": 128
 }

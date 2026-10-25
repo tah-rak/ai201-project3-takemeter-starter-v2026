@@ -295,27 +295,32 @@ which suggests that the source-clustered dataset and the small test support for
 
 | Criterion | Target | Seed 42 | Seed 7 | Seed 2024 | Verdict |
 |---|---|---|---|---|---|
-| 1.  |  |  |  |  |  |
-| 2.  |  |  |  |  |  |
-| 3.  |  |  |  |  |  |
-| 4.  |  |  |  |  |  |
-| 5.  |  |  |  |  |  |
+| 1. Overall accuracy | ≥ 0.65 | 0.484 | 0.484 | 0.484 | MISSED |
+| 2. Macro F1 | ≥ 0.60 | 0.217 | 0.217 | 0.217 | MISSED |
+| 3. Every label F1 | ≥ 0.50 | 0.000 for 2 labels | 0.000 for 2 labels | 0.000 for 2 labels | MISSED |
+| 4. Dataset label balance | No label > 70% | 49.26% max | 49.26% max | 49.26% max | MET |
+| 5. Confidence gap | ≥ 0.10 | 1.000 - 0.000 = 0.800 | 1.000 - 0.200 = 0.800 | 0.800 - 0.300 = 0.500 | MET |
 
 ### Confusion matrix
 
 <!-- ⚠️ TYPED AS A MARKDOWN TABLE. The notebook prints one ready to paste.
      An image of a matrix earns nothing. -->
 
-| true \ predicted |  |  |  |
-|---|---|---|---|
-| **** |  |  |  |
-| **** |  |  |  |
-| **** |  |  |  |
+| true \ predicted | training_advice | race_report | gear_discussion |
+|---|---:|---:|---:|
+| **training_advice** | 0 | 0 | 5 |
+| **race_report** | 0 | 0 | 11 |
+| **gear_discussion** | 0 | 0 | 15 |
 
 **My biggest off-diagonal number, and what it means:**
 <!-- Not "the model made mistakes" — WHICH boundary it didn't learn, and which
      direction. "7 real analysis posts were called hot_take and only 3 went the
      other way" is a direction, not just an error rate. -->
+
+The biggest confusion was 11 real `race_report` posts predicted as
+`gear_discussion`, while 0 real `gear_discussion` posts were predicted as
+`race_report`. This one-sided pattern shows that the model strongly leaned
+toward `gear_discussion` on this boundary.
 
 
 
