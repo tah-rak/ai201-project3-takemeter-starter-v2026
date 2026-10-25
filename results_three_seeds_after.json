@@ -1,0 +1,164 @@
+[
+  {
+    "seed": 42,
+    "n_test": 35,
+    "accuracy": 0.6571428571428571,
+    "f1_macro": 0.5055821371610846,
+    "per_label": {
+      "training_advice": {
+        "precision": 0.6666666666666666,
+        "recall": 0.8,
+        "f1": 0.7272727272727273,
+        "support": 10
+      },
+      "race_report": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 10
+      },
+      "gear_discussion": {
+        "precision": 0.6521739130434783,
+        "recall": 1.0,
+        "f1": 0.7894736842105263,
+        "support": 15
+      }
+    },
+    "confusion": {
+      "training_advice": {
+        "training_advice": 8,
+        "race_report": 0,
+        "gear_discussion": 2
+      },
+      "race_report": {
+        "training_advice": 4,
+        "race_report": 0,
+        "gear_discussion": 6
+      },
+      "gear_discussion": {
+        "training_advice": 0,
+        "race_report": 0,
+        "gear_discussion": 15
+      }
+    },
+    "confidence": {
+      "mean_when_right": 0.5008347034454346,
+      "mean_when_wrong": 0.40361666679382324,
+      "accuracy_most_confident_third": 1.0,
+      "accuracy_least_confident_third": 0.18181818181818182,
+      "n_per_third": 11
+    },
+    "device": "cpu",
+    "device_name": "CPU",
+    "torch_version": "2.14.1+cpu",
+    "max_length": 128
+  },
+  {
+    "seed": 7,
+    "n_test": 35,
+    "accuracy": 0.6285714285714286,
+    "f1_macro": 0.5927216415021292,
+    "per_label": {
+      "training_advice": {
+        "precision": 1.0,
+        "recall": 0.5,
+        "f1": 0.6666666666666666,
+        "support": 10
+      },
+      "race_report": {
+        "precision": 0.75,
+        "recall": 0.3,
+        "f1": 0.42857142857142855,
+        "support": 10
+      },
+      "gear_discussion": {
+        "precision": 0.5384615384615384,
+        "recall": 0.9333333333333333,
+        "f1": 0.6829268292682927,
+        "support": 15
+      }
+    },
+    "confusion": {
+      "training_advice": {
+        "training_advice": 5,
+        "race_report": 0,
+        "gear_discussion": 5
+      },
+      "race_report": {
+        "training_advice": 0,
+        "race_report": 3,
+        "gear_discussion": 7
+      },
+      "gear_discussion": {
+        "training_advice": 0,
+        "race_report": 1,
+        "gear_discussion": 14
+      }
+    },
+    "confidence": {
+      "mean_when_right": 0.4419906437397003,
+      "mean_when_wrong": 0.38791006803512573,
+      "accuracy_most_confident_third": 1.0,
+      "accuracy_least_confident_third": 0.2727272727272727,
+      "n_per_third": 11
+    },
+    "device": "cpu",
+    "device_name": "CPU",
+    "torch_version": "2.14.1+cpu",
+    "max_length": 128
+  },
+  {
+    "seed": 2024,
+    "n_test": 35,
+    "accuracy": 0.6857142857142857,
+    "f1_macro": 0.6295233540570699,
+    "per_label": {
+      "training_advice": {
+        "precision": 1.0,
+        "recall": 0.7,
+        "f1": 0.8235294117647058,
+        "support": 10
+      },
+      "race_report": {
+        "precision": 1.0,
+        "recall": 0.2,
+        "f1": 0.3333333333333333,
+        "support": 10
+      },
+      "gear_discussion": {
+        "precision": 0.5769230769230769,
+        "recall": 1.0,
+        "f1": 0.7317073170731707,
+        "support": 15
+      }
+    },
+    "confusion": {
+      "training_advice": {
+        "training_advice": 7,
+        "race_report": 0,
+        "gear_discussion": 3
+      },
+      "race_report": {
+        "training_advice": 0,
+        "race_report": 2,
+        "gear_discussion": 8
+      },
+      "gear_discussion": {
+        "training_advice": 0,
+        "race_report": 0,
+        "gear_discussion": 15
+      }
+    },
+    "confidence": {
+      "mean_when_right": 0.45844921469688416,
+      "mean_when_wrong": 0.43130290508270264,
+      "accuracy_most_confident_third": 0.8181818181818182,
+      "accuracy_least_confident_third": 0.7272727272727273,
+      "n_per_third": 11
+    },
+    "device": "cpu",
+    "device_name": "CPU",
+    "torch_version": "2.14.1+cpu",
+    "max_length": 128
+  }
+]

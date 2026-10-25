@@ -69,7 +69,7 @@ These distinctions overlap in real posts, so the next milestone will test which 
      sentences. -->
 
 TakeMeter classifies public Reddit `r/running` posts into three categories:
-`training_advice`, `race_report`, and `gear_discussion`. I labeled 203 examples
+`training_advice`, `race_report`, and `gear_discussion`. I labeled 233 examples
 and fine-tuned a local `distilbert-base-uncased` classifier on them. The
 classifier predicts the main purpose of a new running-community post; it does
 not judge whether the advice or opinion is correct.
@@ -145,20 +145,20 @@ I tested the definitions and decision rule with eight generated borderline posts
 <!-- Where you collected from, how you labelled, your counts, and three hard
      cases. -->
 
-**Where the posts came from:** Public r/running pages saved as the three PDFs `Half Marathon Training Advice`, `Race report: I ran my first 10k ever - 50:22`, and `What's up with all this gear?`. I treated the visible comments as individual text examples, as requested, and removed Reddit navigation, vote counts, deleted comments, and duplicate text. The final CSV contains 203 unique examples.
+**Where the posts came from:** Public r/running pages saved as the three PDFs `Half Marathon Training Advice`, `Race report: I ran my first 10k ever - 50:22`, and `What's up with all this gear?`. I treated the visible comments as individual text examples, as requested, and removed Reddit navigation, vote counts, deleted comments, and duplicate text. The original CSV contained 203 unique examples. For Milestone 11, I added 30 synthetic `training_advice` examples as the single improvement experiment; the updated CSV contains 233 examples.
 
-**How I labelled them:** I used the Milestone 2 definitions and AI-assisted first-pass labels, then checked each extracted example against the taxonomy. Examples from the training thread were labeled `training_advice`, examples from the gear thread were labeled `gear_discussion`, and race-thread comments were labeled `race_report` unless their main purpose was training guidance.
+**How I labelled them:** I used the Milestone 2 definitions and AI-assisted first-pass labels, then checked each extracted example against the taxonomy. Examples from the training thread were labeled `training_advice`, examples from the gear thread were labeled `gear_discussion`, and race-thread comments were labeled `race_report` unless their main purpose was training guidance. The 30 Milestone 11 additions are synthetic examples written to represent actionable training guidance and are marked in the CSV notes.
 
-**Labeling disclosure:** These examples were extracted from Reddit comments rather than only top-level posts. The first 20 rows are marked in `labels.csv` as requiring the personal cold-label pass; they are not being falsely represented as independently labeled. Before training, I must review those 20 rows without AI and change their notes to `cold` if my own labels agree.
+**Labeling disclosure:** These examples were extracted from Reddit comments rather than only top-level posts. The first 20 rows were independently reviewed and are marked `cold` in `labels.csv`. The 30 Milestone 11 additions are synthetic and are explicitly marked in their notes.
 
 **Counts per label:**
 
 | Label | Count | Share |
 |---|---|---|
-| `training_advice` | 35 | 17.24% |
-| `race_report` | 68 | 33.50% |
-| `gear_discussion` | 100 | 49.26% |
-| **Total** | **203** | **100%** |
+| `training_advice` | 65 | 27.90% |
+| `race_report` | 68 | 29.18% |
+| `gear_discussion` | 100 | 42.92% |
+| **Total** | **233** | **100%** |
 
 **Three hard cases**
 
@@ -430,21 +430,42 @@ to categorize or adjudicate in this staff set.
 
 ## The Improvement
 
-**What I changed:**
+**What I changed:** I added 30 synthetic `training_advice` examples to
+`labels.csv`, increasing that label from 35 to 65 examples. This was the only
+change in the improvement experiment.
 
-**Which diagnosis pointed at it:**
+**Which diagnosis pointed at it:** `training_advice` had F1 0.000 in all three
+before runs and was the thinnest label. Adding examples targeted the lack of
+training data for that label.
 
 ### Run Log — After
 
 | Criterion | Target | Seed 42 | Seed 7 | Seed 2024 | Verdict |
 |---|---|---|---|---|---|
-| 1.  |  |  |  |  |  |
-| 2.  |  |  |  |  |  |
-| 3.  |  |  |  |  |  |
-| 4.  |  |  |  |  |  |
-| 5.  |  |  |  |  |  |
+| 1. Overall accuracy | ≥ 0.65 across all seeds | 0.657 | 0.629 | 0.686 | MISSED |
+| 2. Macro F1 | ≥ 0.60 across all seeds | 0.506 | 0.593 | 0.630 | MISSED |
+| 3. Every label F1 | ≥ 0.50 for every label and seed | `race_report` 0.000 | `race_report` 0.429 | `race_report` 0.333 | MISSED |
+| 4. Dataset label balance | No label above 70% | 42.92% max | 42.92% max | 42.92% max | MET |
+| 5. Confidence gap | ≥ 0.10 across all seeds | 0.818 | 0.727 | 0.091 | MISSED |
 
-**Did it help, and how do I know:**
+### After confusion matrix (seed 42)
+
+| true \ predicted | training_advice | race_report | gear_discussion |
+|---|---:|---:|---:|
+| **training_advice** | 8 | 0 | 2 |
+| **race_report** | 4 | 0 | 6 |
+| **gear_discussion** | 0 | 0 | 15 |
+
+The biggest after-run confusion was 6 real `race_report` posts predicted as
+`gear_discussion`, while 0 `gear_discussion` posts were predicted as
+`race_report`.
+
+**Did it help, and how do I know:** It helped `training_advice`: its F1 rose
+from 0.000 before the change to 0.727, 0.667, and 0.824 across the three after
+runs. Overall accuracy also rose from 0.484 in every before run to 0.657,
+0.629, and 0.686. However, the change did not fully solve the task: `race_report`
+still missed the 0.50 F1 target in every after run, and the overall criteria
+only count as met when all three seeds pass.
 
 <!-- If it didn't, say so. Relabelling that didn't help is a genuinely
      interesting result and earns full credit. -->
@@ -457,12 +478,23 @@ to categorize or adjudicate in this staff set.
 
 <!-- For each criterion still missed: what you'd do, and why you stopped. -->
 
+Overall accuracy, macro F1, every-label F1, and the confidence-gap criterion
+still have at least one missed seed. The remaining problem is the
+`race_report`/`gear_discussion` boundary: the after matrix still sends 6 real
+`race_report` posts to `gear_discussion` and none in the reverse direction.
+The next improvement would need more diverse `race_report` examples or a
+careful review of that boundary, but I stopped after testing one change as
+required.
 
 
 **The gap between what I meant my labels to capture and what the model
 learned:**
 <!-- Two sentences. Your confusion matrix is the evidence. -->
 
+I intended the model to identify all three post purposes, but it still leaned
+toward `gear_discussion` when a post was a `race_report`. Adding
+`training_advice` examples improved that label substantially, but the model
+still did not learn the race-report boundary reliably.
 
 
 <!-- ═════════════════════════════════════════════════════════════════════
